@@ -1,22 +1,22 @@
-# Import the PyCrypto library
-from Crypto.Cipher import AES
+# Definir el alfabeto
+alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-# Encryption
-# Define the encryption key
-key = 'abcdabcdabcdabcd'
+# Definir el texto a cifrar
+text = "GSVUOZTRHHZBDVZIVXIZAB"
 
-# Create an AES cipher object
-cipher = AES.new(key)
+# Inicializar la cadena de texto cifrado
+ciphertext = ""
 
-# Encrypt the plaintext
-encrypted_data = cipher.encrypt('My secret message')
+# Iterar cada carácter del texto
+for char in text:
+    # Obtener el índice del carácter del texto original
+    idx = alphabet.find(char)
+    # Calcular el índice del carácter cifrado
+    ciph_idx = 25 - idx
+    # Obtener el carácter cifrado
+    ciph_char = alphabet[ciph_idx]
+    # Añadir el carácter cifrado a la cadena de texto cifrado
+    ciphertext += ciph_char
 
-# Decryption
-# Create an AES cipher object
-cipher = AES.new(key)
-
-# Decrypt the encrypted data
-decrypted_data = cipher.decrypt(encrypted_data)
-
-# Output the original message
-print(decrypted_data)
+# Imprimir el texto cifrado
+print(ciphertext)

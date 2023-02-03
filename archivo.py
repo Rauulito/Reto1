@@ -1,22 +1,22 @@
-# Definir el alfabeto
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+#CIFRADO atbash
 
-# Definir el texto a cifrar
-text = "GSVUOZTRHHZBDVZIVXIZAB"
+# alfabetos empleados
+CLARO = 'abcdefghijklmnopqrstuvwxyz '
+CIFRADO = 'GSVUOZTRHHZBDVZIVXIZAB '
 
-# Inicializar la cadena de texto cifrado
-ciphertext = ""
+# Almacena las formas de cifradas y descifradas
+salida = ''
 
-# Iterar cada carácter del texto
-for char in text:
-    # Obtener el índice del carácter del texto original
-    idx = alphabet.find(char)
-    # Calcular el índice del carácter cifrado
-    ciph_idx = 25 - idx
-    # Obtener el carácter cifrado
-    ciph_char = alphabet[ciph_idx]
-    # Añadir el carácter cifrado a la cadena de texto cifrado
-    ciphertext += ciph_char
+# Guarda el texto introducido
+texto = input ('introduce un texto: ')
 
-# Imprimir el texto cifrado
-print(ciphertext)
+# Ejecuta el cifrado
+for simbolo in texto.lower () :
+    if simbolo in CLARO:
+  
+       # Identifica la posición de cada simbolo
+       indice = CLARO.index(simbolo)
+       salida += CIFRADO [indice]
+       
+# imprime en pantalla el resultado
+print (salida)
